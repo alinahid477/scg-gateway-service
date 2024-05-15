@@ -15,7 +15,7 @@ spring:
             - Path=/posts/**
           filters:
             - PrefixPath=/api
-            - AddResponseHeader=X-Powered-By, AN Gateway Service
+            - AddResponseHeader=X-Powered-By, registry comments Gateway Service
         - id: comments-route
           # uri: ${COMMENTS_ROUTE_URI:http://localhost:8082}
           uri: lb://comments-service
@@ -23,7 +23,7 @@ spring:
             - Path=/comments/**
           filters:
             - PrefixPath=/api
-            - AddResponseHeader=X-Powered-By, AN Gateway Service
+            - AddResponseHeader=X-Powered-By, registry posts Gateway Service
 management:
   endpoints:
     web:
